@@ -35,11 +35,10 @@ namespace calculator
             {   
                 try
                 {
-                    Console.Write("Please enter the first number: ");
-                    int number1 = Int32.Parse(Console.ReadLine());
-                    Console.Write("Please enter the second number: ");
-                    int number2 = Int32.Parse(Console.ReadLine());
-                    Console.WriteLine("");
+                    Console.Write("Please enter two numbers separated by a space: ");
+                    string[] numbers = Console.ReadLine().Split(" ");
+                    int number1 = Int32.Parse(numbers[0]);
+                    int number2 = Int32.Parse(numbers[0]);
                     
                     Calculator calculator = new Calculator();
 
