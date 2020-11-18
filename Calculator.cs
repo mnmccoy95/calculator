@@ -21,5 +21,15 @@ namespace calculator
             return number1 / number2;
         }
 
+        public int Square(int number1)
+        {
+            return number1*number1;
+        }
+
+        public double SquareRoot(double number1)
+        {
+            return Math.Sqrt(number1);
+        }
+
     }
 }

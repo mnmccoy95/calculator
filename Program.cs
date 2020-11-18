@@ -16,6 +16,8 @@ namespace calculator
         2) Subtract two numbers
         3) Multiply two numbers
         4) Divide two numbers
+        5) Square a number
+        6) Get sqrt of a number
         0) Exit");
             Console.Write("Choose a Number: ");
             try
@@ -35,11 +37,10 @@ namespace calculator
             {   
                 try
                 {
-                    Console.Write("Please enter the first number: ");
-                    int number1 = Int32.Parse(Console.ReadLine());
-                    Console.Write("Please enter the second number: ");
-                    int number2 = Int32.Parse(Console.ReadLine());
-                    Console.WriteLine("");
+                    Console.Write("Please enter two numbers separated by a space: ");
+                    string[] numbers = Console.ReadLine().Split(" ");
+                    int number1 = Int32.Parse(numbers[0]);
+                    int number2 = Int32.Parse(numbers[0]);
                     
                     Calculator calculator = new Calculator();
 
@@ -80,6 +81,36 @@ namespace calculator
                     Play();
                 }
 
+            }
+            if(choice > 4 && choice < 7)
+            {
+                try
+                {
+                    Console.Write("Please enter a number: ");
+                    int number = Int32.Parse(Console.ReadLine());
+                    Calculator calculator = new Calculator();
+
+                    if(choice == 5)
+                    {
+                        int answer = calculator.Square(number);
+                        Console.WriteLine($"The answer is {answer}");
+                    }
+                    if(choice == 6)
+                    {
+                        double numberDouble = Convert.ToDouble(number);
+                        double answer = calculator.SquareRoot(numberDouble);
+                        Console.WriteLine($"The answer is {answer}");
+                    }
+
+                    Console.WriteLine("");
+                    Play();
+                }
+                catch
+                {
+                    Console.Write("You done goofed somehow, buddy.");
+                    Console.WriteLine("");
+                    Play();
+                }
             }
 
         }
